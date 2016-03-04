@@ -40,7 +40,8 @@ app.on('postedtohs', function PostCode(codestring) {
       // Build the post string from an object
       var post_data = querystring.stringify({
           'email' : email,
-          'hubid': hubid
+          'hubid': hubid,
+          'firstname': firstname
       });
 
       // An object of options to indicate where to post to
