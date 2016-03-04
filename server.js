@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.put('/submit', function(request, response){
+app.post('/submit', function(request, response){
     var email = request.body.email;
     var hubid = request.body.hubid;
 	console.log(request.body.email);
