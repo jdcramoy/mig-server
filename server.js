@@ -1,6 +1,5 @@
 // include the http module
 var http = require('http');
-
 var express = require('express');
 var app = express();
 var pg = require('pg');
@@ -15,8 +14,13 @@ app.listen(app.get('port'), function() {
 });
 
 app.get('/', function(request, response) {
- response.send('Hello World!');
- });
+ response.send('HIT ME WITH SOME DATA');
+});
+
+app.get('/:email/:hubid', function(request, response) {
+ console.log(req.params.email);
+ console.log(req.params.email);
+});
 
 
 //var bodyParser = require('body-parser');
