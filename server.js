@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
  response.send('HIT ME WITH SOME DATA');
 });
 
-app.put('/user/:email/:hubid', function(req, res) {
+app.get('/user/:email/:hubid', function(req, res) {
  console.log(req.params.email);
  console.log(req.params.email);
 });
