@@ -26,11 +26,9 @@ app.get('/', function(request, response) {
  console.log(req.params.hubid);
 }); */
 
-app.post('/form/', function(request, response){
+/*app.post('/form/', function(request, response){
     console.log(request.body.name);
     console.log(request.body.email);
-});
+}); */
 
-
-var bodyParser = require('body-parser');
 
