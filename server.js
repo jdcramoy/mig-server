@@ -1,5 +1,5 @@
 
-// include the http module
+// includes
 var http = require('http');
 var express = require('express');
 var app = express();
@@ -7,35 +7,29 @@ var pg = require('pg');
 var bodyParser = require("body-parser");
 var request = require('request');
 var querystring = require('querystring');
-var http = require('http');
-var fs = require('fs');
 var email;
 var hubid;
 var firstname;
 
 app.set('port', (process.env.PORT || 5000));
-
-//app.use(express.static(__dirname + '/public'));
-
+app.use(express.static(__dirname + '/public'));
 app.get('/', function(request, response) {
  response.send('HIT ME WITH SOME DATA, MEOW!!');
 });
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+//end point to handle post requests coming to the server
 app.post('/', function(request, response){
 	    email = request.body.email;
 	    hubid = request.body.hubid;
 	    firstname = request.body.firstname
 		console.log(email);
 	    console.log(hubid);
-	    console.log("test");
+	    console.log(firstname);
 	    response.end("yes");
 	    app.emit('postedtohs');
- 
-}); 
-
+ }); 
+//listener to 
 app.on('postedtohs', function PostCode(codestring) {
       // Build the post string from an object
       var post_data = querystring.stringify({
