@@ -22,11 +22,11 @@ app.post('/submit', function(request, response){
     	res.send({message:'You broke it.'});
     	res.send(request.body);
   } else {
-	    var email = request.body.email;
+	    /*var email = request.body.email;
 	    var hubid = request.body.hubid;
 		console.log(request.body.email);
 	    console.log(request.body.hubid);
-	    res.end("yes");
+	    res.end("yes");*/
   }
 
 }); 
