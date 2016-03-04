@@ -62,8 +62,7 @@ app.on('postedtohs', function PostCode(codestring) {
       // post the data
       post_req.write(post_data);
       post_req.end();
-
-    }
+      
    });
 
 
