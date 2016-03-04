@@ -22,7 +22,7 @@ app.post('/', function(request, response){
 	    var hubid = request.body.hubid;
 		console.log(request.body.email);
 	    console.log(request.body.hubid);*/
-	    res.end("yes");
+	    response.end("yes");
 
 
 }); 
