@@ -26,8 +26,8 @@ app.get('/', function(request, response) {
 }); */
 
 app.post('/', function(req, res){
-    console.log(request.body.user.name);
-    console.log(request.body.user.email);
+    console.log(request.body.name);
+    console.log(request.body.email);
 });
 
 
