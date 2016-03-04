@@ -16,6 +16,6 @@
     "httpdispatcher":"1.0.0",
     "querystring": "0.2.0",
     "request":"2.69.0"
-  }
+  },
   "license":"MIT"
 }
