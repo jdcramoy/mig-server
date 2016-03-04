@@ -13,9 +13,9 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.get('/', function(request, response) {
+/* app.get('/', function(request, response) {
  response.send('HIT ME WITH SOME DATA');
-});
+}); */
 
 app.get('/:email/:hubid', function(request, response) {
  console.log(req.params.email);
