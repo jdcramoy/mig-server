@@ -34,7 +34,7 @@ app.post('/', function(request, response){
 	    email = request.body.email;
 	    hubid = request.body.hubid;
 	    firstname = request.body.firstname
-		console.log(email);
+	    console.log(email);
 	    console.log(hubid);
 	    console.log(firstname);
 	    response.end("yes");
