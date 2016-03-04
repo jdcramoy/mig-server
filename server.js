@@ -11,6 +11,7 @@ var http = require('http');
 var fs = require('fs');
 var email;
 var hubid;
+var firstname;
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.post('/', function(request, response){
 	    email = request.body.email;
 	    hubid = request.body.hubid;
+	    firstname = request.body.firstname
 		console.log(email);
 	    console.log(hubid);
 	    console.log("test");
