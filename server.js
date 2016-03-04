@@ -15,7 +15,7 @@ app.get('/', function(request, response) {
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.post('/submit', function(request, response){
     if (err) {
