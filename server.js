@@ -24,8 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/', function(request, response){
-	    email = req.body.email;
-	    hubid = req.body.hubid;
+	    email = request.body.email;
+	    hubid = request.body.hubid;
 		console.log(email);
 	    console.log(hubid);
 	    console.log("test");
