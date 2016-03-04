@@ -28,6 +28,7 @@ app.post('/', function(request, response){
 	    hubid = request.body.hubid;
 		console.log(email);
 	    console.log(hubid);
+	    console.log("test");
 	    response.end("yes");
 	    app.emit('postedtohs');
  
