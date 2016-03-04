@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(function(request, response, next){
 	response.header('Access-Control-Allow-Origin','*');
 	response.header('Access-Control-Allow-Methods', 'GET, POST');
-	response.header('Access-Control-Allow-Headers', 'Content-Type');
+	response.header('Access-Control-Allow-Headers', 'Content-Type,  X-Requested-With');
 	next();
 })
 
