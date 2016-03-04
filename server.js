@@ -16,6 +16,13 @@ app.set('port', (process.env.PORT || 5000));
 //to serve files from the public directory
 app.use(express.static(__dirname + '/public'));
 //standard response for a get request to the server
+app.use(function(request, response, next){
+	response.header('Access-Control-Allow-Origin','*');
+	response.header('Access-Control-Allow-Methods', 'GET, POST');
+	response.header('Access-Control-Allow-Headers', 'Content-Type');
+	next();
+})
+
 app.get('/', function(request, response) {
  response.send('HIT ME WITH SOME DATA, MEOW!!');
 });
