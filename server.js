@@ -26,11 +26,8 @@ app.get('/', function(request, response) {
 }); */
 
 app.post('/', function(req, res){
-    console.log('POST /');
-    console.dir(req.body);
-    console.log(req.body);
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('thanks');
+    console.log(request.body.user.name);
+    console.log(request.body.user.email);
 });
 
 
