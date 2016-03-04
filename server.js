@@ -24,41 +24,42 @@ app.use(bodyParser.json());
 app.post('/', function(request, response){
 	    var email = request.body.email;
 	    var hubid = request.body.hubid;
-		console.log(request.body.email);
-	    console.log(request.body.hubid);
+		console.log(email);
+	    console.log(hubid);
 	    response.end("yes");
-	    function PostCode(codestring) {
-  // Build the post string from an object
-  var post_data = querystring.stringify({
-      'email' : request.body.email,
-      'hubid': request.body.hubid,
-  });
 
-  // An object of options to indicate where to post to
-  var post_options = {
-      host: 'forms.hubspot.com',
-      path: '/uploads/form/v2/435353/cbe5ce25-2904-4634-953e-aef4e3570eb7',
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Content-Length': postData.length
-      }
-  };
+	function PostCode(codestring) {
+  	// Build the post string from an object
+	  var post_data = querystring.stringify({
+	      'email' : email,
+	      'hubid': hubid,
+	  });
 
-  // Set up the request
-  var post_req = http.request(post_options, function(response) {
-      response.setEncoding('utf8');
-      response.on('data', function (chunk) {
-          console.log('Response: ' + chunk);
-      });
-  });
+	  // An object of options to indicate where to post to
+	  var post_options = {
+	      host: 'forms.hubspot.com',
+	      path: '/uploads/form/v2/435353/cbe5ce25-2904-4634-953e-aef4e3570eb7',
+	      method: 'POST',
+	      headers: {
+	          'Content-Type': 'application/x-www-form-urlencoded',
+	          'Content-Length': postData.length
+	      }
+	  };
 
-  // post the data
-  post_req.write(post_data);
-  post_req.end();
+	  // Set up the request
+	  var post_req = http.request(post_options, function(response) {
+	      response.setEncoding('utf8');
+	      response.on('data', function (chunk) {
+	          console.log('Response: ' + chunk);
+	      });
+	  });
 
-}
-}); 
+	  // post the data
+	  post_req.write(post_data);
+	  post_req.end();
+
+	}
+	}); 
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
