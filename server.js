@@ -17,9 +17,16 @@ app.get('/', function(request, response) {
  response.send('HIT ME WITH SOME DATA');
 });
 
-app.get('/user/:email/:hubid', function(req, res) {
+app.post('/user/:email/:hubid', function(req, res) {
  console.log(req.params.email);
- console.log(req.params.email);
+ console.log(req.params.hubid);
+});
+
+app.post('/', function(req, res){
+    console.log('POST /');
+    console.dir(req.body);
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('thanks');
 });
 
 
