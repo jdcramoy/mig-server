@@ -1,27 +1,14 @@
-//Lets require/import the HTTP module
+// include the http module
 var http = require('http');
-var dispatcher = require('httpdispatcher');
 
-//Lets define a port we want to listen to
-const PORT=8080; 
+// create a webserver
+http.createServer(function (req, res) {
 
-//We need a function which handles requests and send response
-function handleRequest(request, response){
-    try {
-        //log the request on console
-        console.log(request.url);
-        //Disptach
-        dispatcher.dispatch(request, response);
-    } catch(err) {
-        console.log(err);
-    }
-}
+    // respond to any incoming http request
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
 
-//Create a server
-var server = http.createServer(handleRequest);
+}).listen(1337, '127.0.0.1');
 
-//Lets start our server
-server.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening");
-});
+// log what that we started listening on localhost:1337
+console.log('Server running at 127.0.0.1:1337');
