@@ -11,11 +11,15 @@ var email;
 var hubid;
 var firstname;
 
+//set the port
 app.set('port', (process.env.PORT || 5000));
+//to serve files from the public directory
 app.use(express.static(__dirname + '/public'));
+//standard response for a get request to the server
 app.get('/', function(request, response) {
  response.send('HIT ME WITH SOME DATA, MEOW!!');
 });
+//parsers to help with the request data
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //end point to handle post requests coming to the server
@@ -29,16 +33,17 @@ app.post('/', function(request, response){
 	    response.end("yes");
 	    app.emit('postedtohs');
  }); 
-//listener to 
+
+//listen for incoming Post Requests and make post requests
 app.on('postedtohs', function PostCode(codestring) {
-      // Build the post string from an object
+      // Build the post data
       var post_data = querystring.stringify({
           'email' : email,
           'hubid': hubid,
           'firstname': firstname
       });
-
-      // An object of options to indicate where to post to
+      
+      //POST option
       var post_options = {
           host: 'forms.hubspot.com',
           path: '/uploads/form/v2/435353/cbe5ce25-2904-4634-953e-aef4e3570eb7',
@@ -63,8 +68,7 @@ app.on('postedtohs', function PostCode(codestring) {
 
    });
 
-
-
+//server is listening
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
