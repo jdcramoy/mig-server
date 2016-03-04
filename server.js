@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.post('/submit', function(request, response){
     if (err) {
-    	res.send('You broke it.');
+    	res.send({message:'You broke it.'});
     	res.send(request.body);
   } else {
 	    var email = request.body.email;
