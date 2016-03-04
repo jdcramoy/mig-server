@@ -25,7 +25,7 @@ app.get('/', function(request, response) {
  console.log(req.params.hubid);
 }); */
 
-app.post('/form/', function(req, res){
+app.post('/form/', function(request, response){
     console.log(request.body.name);
     console.log(request.body.email);
 });
