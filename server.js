@@ -47,7 +47,7 @@ app.on('postedtohs', function PostCode(codestring) {
           method: 'POST',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
-              'Content-Length': postData.length
+              'Content-Length': post_data.length
           }
       };
 
@@ -62,7 +62,7 @@ app.on('postedtohs', function PostCode(codestring) {
       // post the data
       post_req.write(post_data);
       post_req.end();
-      
+
    });
 
 
