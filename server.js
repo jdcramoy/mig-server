@@ -25,7 +25,7 @@ app.get('/', function(request, response) {
  console.log(req.params.email);
  console.log(req.params.hubid);
 }); */
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
 
 app.post('/form/', function(request, response){
     console.log(request.body.name);
