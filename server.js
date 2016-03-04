@@ -18,11 +18,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/submit', function(request, response){
-    var email = request.body.email;
-    var hubid = request.body.hubid;
-	console.log(request.body.email);
-    console.log(request.body.hubid);
-    res.end("yes");
+    if (err) {
+    	res.send('You broke it.');
+    	res.send(request.body);
+  } else {
+	    var email = request.body.email;
+	    var hubid = request.body.hubid;
+		console.log(request.body.email);
+	    console.log(request.body.hubid);
+	    res.end("yes");
+  }
+
 }); 
 
 app.listen(app.get('port'), function() {
