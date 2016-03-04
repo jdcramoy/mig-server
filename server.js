@@ -3,6 +3,7 @@ var http = require('http');
 var express = require('express');
 var app = express();
 var pg = require('pg');
+var bodyParser = require('body-parser');
 
 
 
@@ -31,5 +32,5 @@ app.post('/form/', function(request, response){
 });
 
 
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
