@@ -32,10 +32,10 @@ app.use(bodyParser.json());
 //end point to handle post requests coming to the server
 app.post('/', function(request, response){
 	    email = request.body.email;
-	    hubid = request.body.hubid;
+	    hubid = request.body.portal_id;
 	    firstname = request.body.firstname
 	    console.log(email);
-	    console.log(hubid);
+	    console.log(portal_id);
 	    console.log(firstname);
 	    response.end("yes");
 	    app.emit('postedtohs');
@@ -46,7 +46,7 @@ app.on('postedtohs', function PostCode(codestring) {
       // Build the post data
       var post_data = querystring.stringify({
           'email' : email,
-          'hubid': hubid,
+          'portal_id': portal_id,
           'firstname': firstname
       });
       
