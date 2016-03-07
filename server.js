@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 //end point to handle post requests coming to the server
 app.post('/', function(request, response){
 	    email = request.body.email;
-	    hubid = request.body.portal_id;
+	    portal_id = request.body.portal_id;
 	    firstname = request.body.firstname
 	    console.log(email);
 	    console.log(portal_id);
