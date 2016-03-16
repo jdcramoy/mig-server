@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 app.post('/', function(request, response){
 	    email = request.body.email;
 	    portal_id = request.body.portal_id;
-	    firstname = request.body.firstname
+	    firstname = request.body.firstname;
 	    console.log(email);
 	    console.log(portal_id);
 	    console.log(firstname);
