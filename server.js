@@ -1,3 +1,4 @@
+
 // includes
 var http = require('http');
 var express = require('express');
@@ -28,7 +29,6 @@ app.get('/', function(request, response) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //end point to handle post requests coming to the server
-<<<<<<< HEAD
 app.post('/', function(request, response) {
   email = request.body.email;
   portal_id = request.body.portal_id;
@@ -38,17 +38,6 @@ app.post('/', function(request, response) {
   console.log(firstname);
   response.end('yes');
   app.emit('postedtohs');
-=======
-app.post('/', function(request, response){
-	    email = request.body.email;
-	    portal_id = request.body.portal_id;
-	    firstname = request.body.firstname;
-	    console.log(email);
-	    console.log(portal_id);
-	    console.log(firstname);
-	    response.end("yes");
-	    app.emit('postedtohs');
->>>>>>> 0ff6461af7b2c39053bbd514aa249fbc798c23b9
  }); 
 //listen for incoming Post Requests and make post requests
 app.on('postedtohs', function PostCode(codestring) {
