@@ -34,6 +34,7 @@ app.post('/', function(request, response) {
   email = request.body.email;
   portal_id = request.body.portal_id;
   firstname = request.body.firstname;
+  cos = request.body.cos;
   console.log(email);
   console.log(portal_id);
   console.log(firstname);
