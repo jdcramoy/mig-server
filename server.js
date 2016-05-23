@@ -10,6 +10,7 @@ var querystring = require('querystring');
 var email;
 var portal_id;
 var firstname;
+var cos;
 //set the port
 app.set('port', (process.env.PORT || 5000));
 //to serve files from the public directory
@@ -36,6 +37,7 @@ app.post('/', function(request, response) {
   console.log(email);
   console.log(portal_id);
   console.log(firstname);
+  console.log(cos);
   response.end('yes');
   app.emit('postedtohs');
  }); 
@@ -45,7 +47,8 @@ app.on('postedtohs', function PostCode(codestring) {
   var post_data = querystring.stringify({
     'email' : email,
     'portal_id': portal_id,
-    'firstname': firstname
+    'firstname': firstname,
+    'cos': cos
   });
   //POST option
   var post_options = {
